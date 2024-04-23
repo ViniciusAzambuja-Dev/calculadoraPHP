@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    flex: 20%;
+}
+.titulo{
+    font-size: 25px;
+}
+main{
+    flex: 80%;
+}
+.divContainerForm{
+  padding: 25px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.containerCalculadora{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    
+}
+.tituloOperações{
+    text-align: center;
+    margin-bottom: 3px;
+}
+.backgroundCalculadora{
+    background-color: black;
+    padding: 40px 20px;
+    border-radius: 15px;
+    border-left-style: solid;
+    border-left-width: 6px;
+    border-left-color: rgb(184, 184, 184);
+   
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 
+    0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.campoImprimeVariavel{
+    background-color: white;
+    padding: 20px;
+}
+.containerInput{
+    flex: 50%;
+    display: flex;
+    gap: 5px;
+}
+.divInputPai label{
+    font-size: 14px;
+}
+.divInputFilho{
+    background-color: grey;
+}
+.divInputFilho input{
+    padding: 3px;
+    border: 0;
+    border-radius: 7px;
+    margin-top: 2px;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+::placeholder{
+    font-size: 13px;
+    color: white;
+}
+.containerButtons{
+    flex: 50%;   
+}
+
+.divButtons{
+    display: flex;
+    margin: 3px;
+   
+}
+.divButtons button{
+    width: 100%;
+    margin: 2px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#fonteSoma{
+    font-size: 20px;
+}
+#fonteSubtracao{
+    font-size: 20px;
+}
+
+#fonteMultiplicacao{
+    font-size: 20px;
+}
+
+#fonteDivisao{
+    font-size: 20px;
+}
+
+
+
+
