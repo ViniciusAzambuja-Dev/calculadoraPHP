@@ -128,6 +128,11 @@ input[type=number]::-webkit-outer-spin-button {
 #fonteDivisao{
     font-size: 20px;
 }
+.campoImprimeVariavel{
+    color: black;
+    font-size: 15px;
+    text-align: end;
+}
 
 
 

@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+
+    if (isset($_POST['operacao'])){
+        $num1 = $_POST['num1'];
+        $num2 = $_POST['num2'];
+        $operacao = $_POST['operacao'];
+        $resultado = 0;
+        
+        if($num1 == "" || $num2 == ""){
+            echo    '<p style="color: rgb(239, 58, 58); font-weight: 700;">ERRO, campo vazio!</p>';
+        }
+        else{
+            switch($operacao){
+                case "+":
+                    $resultado = $num1 + $num2;
+                    break;
+                
+                case "-":
+                    $resultado = $num1 - $num2;
+                    break;
+                
+                case "*":
+                    $resultado = $num1 * $num2;
+                    break;
+                
+                case "/":
+                    if($num1 != 0 && $num2 != 0){
+                    $resultado = $num1/$num2;
+                    break;
+                    }
+                    else{
+                        echo '<p style="color: rgb(239, 58, 58); font-weight: 700;">ERRO, não existe divisão por 0!</p>';
+                        break;
+                    }
+
+                case "x^y":
+                    $resultado = $num1**$num2;
+                
+                    break;
+                
+                case "raiz":
+                    $resultado = $num1 + $num2;
+                    $resultado = sqrt($resultado);
+                
+                    break;
+
+                case "x!":
+                    $resultado = $num1 + $num2;
+                    for($i = $resultado - 1; $i >= 1; $i--){
+                        $resultado = $resultado * $i;
+                    }
+                
+                    break;
+                    
+
+                default: '<p style="color: rgb(239, 58, 58); font-weight: 700;">ERRO, atualize a sua página!</p>';
+                break;
+            }
+        }
+    }
+    
+?>
    
     <header>
         <h1 class="titulo"><b>Bem vindo a nossa Calculadora!</b></h1>
@@ -21,7 +83,7 @@
         colocar um background só para os inputs e colocar uma parte para aparecer o resultado!!-->
         <!--Pra imprimir algo dentro do php, você abre o escopo dentro da onde vc quer imprimir..-->
         <div class="divContainerForm">
-            <form action="./php/validacao.php" method="post">
+            <form action="index.php" method="post">
                 
                     
 
@@ -29,9 +91,11 @@
                         <p class="tituloOperações">Operações</p>
                         <div class="backgroundCalculadora">
                             <div class="campoImprimeVariavel">
-
-
-
+                            <?php
+                              if (isset($resultado)) {
+                                echo number_format($resultado, 2, ',','.');
+                                }
+                            ?>
                             </div>
                                 <div class="containerInput">
                                         
@@ -64,8 +128,8 @@
                                         <button type="submit" name="operacao" value="raiz" class="button">√</button>
                                     </div>
                                     <div class="divButtons">
-                                        <button type="submit" name="operacao" class="button">x!</button>
-                                        <button value=".">.</button>
+                                        <button type="submit" name="operacao" value="x!" class="button">x!</button>
+                                        <button type="button" value=".">.</button>
                                     </div>
                                 </div>
                         </div>
@@ -74,5 +138,6 @@
         </div>
 
     </main>
+
 </body>
 </html>
