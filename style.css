@@ -66,10 +66,11 @@ form{
 }
 .campoImprimeVariavel{
     background-color: white;
+    flex: 25%;
     padding: 20px;
 }
 .containerInput{
-    flex: 50%;
+    flex: 25%;
     display: flex;
     gap: 5px;
 }
@@ -92,7 +93,7 @@ form{
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0;
+     margin: 0;
 }
 ::placeholder{
     font-size: 13px;
